@@ -1,0 +1,298 @@
+```html
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Isaac Reyes Ortega | Portafolio Académico</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#0f172a',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Navigation Bar (al-folio style) -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <a href="#about" class="font-bold text-lg tracking-tight hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                    <span class="text-sky-600 dark:text-sky-400">&lt;S</span>ebastián<span class="text-sky-600 dark:text-sky-400">/&gt;</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                    <a href="#about" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Sobre Mí</a>
+                    <a href="#interests" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Intereses</a>
+                    <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Proyectos</a>
+                    <a href="#skills" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Habilidades</a>
+                    <a href="#contact" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Actions: Dark Mode & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all focus:outline-none">
+                        <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+                    <button id="mobileMenuBtn" aria-label="Toggle Mobile Menu" class="md:hidden p-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        <i class="fa-solid fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block py-2 text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400">Sobre Mí</a>
+            <a href="#interests" class="block py-2 text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400">Intereses</a>
+            <a href="#projects" class="block py-2 text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400">Proyectos</a>
+            <a href="#skills" class="block py-2 text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400">Habilidades</a>
+            <a href="#contact" class="block py-2 text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+
+        <!-- HERO / ABOUT SECTION -->
+        <section id="about" class="pt-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <!-- Avatar / Badge Block -->
+                <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                    <div class="relative group">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 p-1 shadow-xl">
+                            <div class="w-full h-full bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center overflow-hidden">
+                                <span class="text-4xl font-bold text-sky-600 dark:text-sky-400">SR</span>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-emerald-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full border-2 border-slate-50 dark:border-slate-900 shadow">
+                            Estudiante
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Bio & Title -->
+                <div class="md:col-span-2 space-y-4 text-center md:text-left">
+                    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
+                        Sebastián Isaac Reyes Ortega
+                    </h1>
+                    <p class="text-lg font-medium text-sky-600 dark:text-sky-400">
+                        <i class="fa-solid fa-graduation-cap mr-2"></i>Estudiante EPN (Escuela Politécnica Nacional)
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Apasionado por la resolución de problemas mediante software, la computación científica y la arquitectura de sistemas. Enfocado en ampliar constantemente mis conocimientos técnicos participando en proyectos colaborativos y explorando nuevas tecnologías emergentes.
+                    </p>
+
+                    <!-- Contact/Social Buttons -->
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                        <a href="https://github.com/YosoySebass" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 text-white dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 transition-all text-sm font-medium shadow-sm">
+                            <i class="fa-brands fa-github text-base"></i> GitHub (@YosoySebass)
+                        </a>
+                        <a href="mailto:sebastian.reyes@epn.edu.ec" 
+                           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-500 transition-all text-sm font-medium shadow-sm">
+                            <i class="fa-solid fa-envelope text-base"></i> Correo EPN
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERESTS SECTION -->
+        <section id="interests" class="space-y-6">
+            <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-compass text-sky-600 dark:text-sky-400"></i> Áreas de Interés
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Card 1 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/50 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-3 text-lg font-bold">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Inteligencia Artificial</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Modelos de aprendizaje, automatización y algoritmos inteligentes.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-3 text-lg font-bold">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Desarrollo Web</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Construcción de aplicaciones adaptativas, modernas e interactivas.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3 text-lg font-bold">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Ciencia de Datos</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Análisis, procesamiento e interpretación estructurada de información.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3 text-lg font-bold">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Programación</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lógica algorítmica, estructuras de datos y fundamentos de computación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="space-y-6">
+            <div class="border-b border-slate-200 dark:border-slate-800 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-diagram-project text-sky-600 dark:text-sky-400"></i> Proyectos Destacados
+                </h2>
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-200 dark:bg-slate-800 px-3 py-1 rounded-full w-fit">
+                    Colaboraciones en GitHub
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-lg transition-all duration-200">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <span class="text-2xl text-sky-600 dark:text-sky-400">
+                                <i class="fa-solid fa-music"></i>
+                            </span>
+                            <a href="https://github.com/JhosuaS/musicplayer" target="_blank" rel="noopener noreferrer" 
+                               class="text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors" title="Ver en GitHub">
+                                <i class="fa-brands fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                            Music Player
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Reproductor de música interactivo desarrollado en colaboración, enfocado en el manejo de estructuras de datos e interfaz multimedia.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300">Software</span>
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-lg transition-all duration-200">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <span class="text-2xl text-sky-600 dark:text-sky-400">
+                                <i class="fa-solid fa-robot"></i>
+                            </span>
+                            <a href="https://github.com/JhosuaS/exobotExam" target="_blank" rel="noopener noreferrer" 
+                               class="text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors" title="Ver en GitHub">
+                                <i class="fa-brands fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                            ExoBot Exam
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Proyecto académico enfocado en la aplicación de lógica, algoritmos y programación para la resolución de un examen mecatrónico.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300">Lógica & Programación</span>
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-lg transition-all duration-200">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <span class="text-2xl text-sky-600 dark:text-sky-400">
+                                <i class="fa-solid fa-calculator"></i>
+                            </span>
+                            <a href="https://github.com/JUSTAILS/PROYECTO-ARQUITECTURA-DE-COMPUTADORES" target="_blank" rel="noopener noreferrer" 
+                               class="text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors" title="Ver en GitHub">
+                                <i class="fa-brands fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                            Arquitectura de Computadores
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Código y algoritmos desarrollados para la realización de operaciones binarias en coma flotante y representación numérica en complemento a 2.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/50 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Coma Flotante</span>
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300">Complemento a 2</span>
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="space-y-6">
+            <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-sky-600 dark:text-sky-400"></i> Habilidades / Skills
+                </h2>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm space-y-6">
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
+                        Lenguajes y Tecnologías (Dominio Básico)
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                        <!-- Skill Badge C -->
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center gap-2 hover:border-sky-500 transition-all">
+                            <i class="fa-solid fa-c text-2xl text-blue-600 dark:text-blue-400"></i>
+                            <span class="text-xs font-medium">Lenguaje C</span>
+                        </div>
+                        
+                        <!-- Skill Badge Python -
